@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "CouchPotato",
+  "version": "1.0",
+  "description": "Skips intro and next episode of shows (Ultimate Binge)",
+  "browser_action": {
+    "default_icon": "stuff/potato.jpg",
+    "default_popup": "ui.html",
+    "default_title": "CouchPotato"
+  },
+  "icons": {
+    "48": "stuff/potato.jpg"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.netflix.com/watch/*",
+        "*://*.hotstar.com/*",
+        "*://*.primevideo.com/*",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "script.js"
+      ]
+    }
+  ]
+}
